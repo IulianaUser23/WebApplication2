@@ -44,11 +44,11 @@ namespace WebApplication2
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-            if (!env.IsDevelopment())
-            {
-                app.UseSpaStaticFiles();
-            }
-
+  //          if (!env.IsDevelopment())
+  //          {
+  //              app.UseSpaStaticFiles();
+  //          }
+            app.UseSpaStaticFiles();
             app.UseRouting();
 
             app.UseEndpoints(endpoints =>
@@ -63,12 +63,12 @@ namespace WebApplication2
                 // To learn more about options for serving an Angular SPA from ASP.NET Core,
                 // see https://go.microsoft.com/fwlink/?linkid=864501
 
-                spa.Options.SourcePath = "ClientApp";
+                spa.Options.SourcePath = "wwwroot";
 
-                if (env.IsDevelopment())
-                {
-                    spa.UseAngularCliServer(npmScript: "start");
-                }
+       //       if (env.IsDevelopment())
+       //         {
+       //            spa.UseAngularCliServer(npmScript: "start");
+       //        }
             });
         }
     }
